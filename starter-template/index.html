@@ -13,6 +13,88 @@
   <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
+    .form-check {
+  margin-bottom: 20px;
+    }
+    h5 {
+  font-family: Gilroy;
+  font-size: 170px;
+  font-weight: 900;
+  line-height: 214.54px;
+  text-align: left;
+}
+
+.modal-footer {
+  border: 12px solid rgba(236, 236, 236, 1);
+  background: rgba(255, 255, 255, 1);
+}
+
+.modal-footer button {
+  font-family: Gilroy;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 99.04px;
+  text-align: left;
+  background: rgba(255, 255, 255, 1);
+}
+
+.modal-footer button:nth-child(1) {
+  width: 250px;
+  height: 100px;
+  border: 12px solid rgba(236, 236, 236, 1);
+  border-radius: 30px;
+  background: #E0E0E0;
+  font-family: Gilroy;
+  font-size: 40px;
+  text-align: center;
+  line-height: normal;
+}
+
+.modal-footer button:nth-child(2) {
+  width: 300px;
+  height: 100px;
+  border: 12px solid rgba(236, 236, 236, 1);
+  border-radius: 30px;
+  background: #FD7021;
+  font-family: Gilroy;
+  font-size: 35px;
+  text-align: center;
+  line-height: normal;
+}
+
+
+    .answer-container .answer-label {
+      font-family: 'Gilroy';
+      font-size: 35px;
+      color: #000000;
+      margin: 0;
+    }
+
+    .answer-container .form-check-input {
+      margin: 10px; 
+    }
+
+    .answer-container {
+  display: flex;
+  align-items: center;
+  width: 1000px;
+  height: 70px;
+  gap: 10px; 
+  border-radius: 99px;
+  border: 2px solid #9E9E9E;
+  background: #F7F7F7;
+  padding: 0px;
+  padding-left: 
+}
+
+    .answer-label {
+      font-family: 'Gilroy';
+      font-size: 20px;
+      line-height: 50px;
+      text-align: left;
+      color: #000000;
+    }
+
     .bd-placeholder-img {
       font-size: 1.125rem;
       text-anchor: middle;
@@ -55,73 +137,103 @@
           background-color: #ececec;
         }
       </style>
-      <div class="modal" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
-        tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
+      <div class="modal" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
           <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalToggleLabel">1/3</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header d-flex justify-content-between">
+              <h4 class="modal-title" id="exampleModalToggleLabel" style="margin-left: auto; font-family: 'Gilroy'; font-size: 50px;">1/3</h4>
             </div>
             <div class="modal-body">
-              <h5> Какую помощь вы бы хотели получить в ОАЭ? </h5>
+              <h5 style="font-family: 'Gilroy'; font-size: 50px; font-weight: 900; line-height: 214.54px; text-align: left;">Какую помощь вы бы хотели получить в ОАЭ?</h5>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
-                  Default radio
-                </label>
+                <div class="answer-container">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" style="border: 2px solid #FD7021;">
+                  <label class="form-check-label answer-label" for="flexRadioDefault1">Открытие бизнеса</label>
+                </div>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                <label class="form-check-label" for="flexRadioDefault2">
-                  Default checked radio
-                </label>
+                <div class="answer-container">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" style="border: 2px solid #FD7021;">
+                  <label class="form-check-label answer-label" for="flexRadioDefault2">Бухгалтерские услуги</label>
+                </div>
+              </div>
+              <div class="form-check">
+                <div class="answer-container">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" style="border: 2px solid #FD7021;">
+                  <label class="form-check-label answer-label" for="flexRadioDefault3">Юридические услуги</label>
+                </div>
+              </div>
+              <div class="form-check">
+                <div class="answer-container">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" style="border: 2px solid #FD7021;">
+                  <label class="form-check-label answer-label" for="flexRadioDefault4">Открытие банковского счета</label>
+                </div>
               </div>
             </div>
             <div class="modal-footer d-flex justify-content-between">
-              <button class="btn btn-secondary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
-                data-bs-dismiss="modal">← Назад</button>
-              <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
-                data-bs-dismiss="modal">Open second modal</button>
-
+              <button class="btn btn-secondary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">← Назад</button>
+              <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Вперед →</button>
             </div>
           </div>
         </div>
-      </div>
+      </div>      
       <div class="modal" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
         tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
           <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header d-flex justify-content-between">
+              <h4 class="modal-title" id="exampleModalToggleLabel" style="margin-left: auto; font-family: 'Gilroy'; font-size: 50px;">2/3</h4>
             </div>
             <div class="modal-body">
-              В какое время планируете воспользоваться услугой? </div>
-            <div class="modal-footer">
-              <button class="btn btn-primary" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal"
-                data-bs-dismiss="modal">Back to first</button>
+              <h5 style="font-family: 'Gilroy'; font-size: 45px; font-weight: 900; line-height: 214.54px; text-align: left;">В какое время планируете воспользоваться услугой?</h5>
+              <div class="form-check">
+                <div class="answer-container">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault5" style="border: 2px solid #FD7021;">
+                  <label class="form-check-label answer-label" for="flexRadioDefault5">Как можно скорее</label>
+                </div>
+              </div>
+              <div class="form-check">
+                <div class="answer-container">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault7" style="border: 2px solid #FD7021;">
+                  <label class="form-check-label answer-label" for="flexRadioDefault6">В течении месяца</label>
+                </div>
+              </div>
+              <div class="form-check">
+                <div class="answer-container">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault7" style="border: 2px solid #FD7021;">
+                  <label class="form-check-label answer-label" for="flexRadioDefault7">В течении 6 месяцев</label>
+                </div>
+              </div>
+              <div class="form-check">
+                <div class="answer-container">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault8" style="border: 2px solid #FD7021;">
+                  <label class="form-check-label answer-label" for="flexRadioDefault8">В течении года</label>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-between">
+              <button class="btn btn-secondary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">← Назад</button>
+              <button class="btn btn-primary" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Вперед →</button>
             </div>
           </div>
         </div>
-      </div>
-      <div class="modal" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+      </div>      
+      <div class="modal" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel3"
         tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 3</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <h4 class="modal-title" id="exampleModalToggleLabel" style="margin-left: auto; font-family: 'Gilroy'; font-size: 50px;">3/3</h4>
             </div>
             <div class="modal-body">
-              <h5> Оставьте свои контактыи получите персональную скидку! </h5>
+              <h5 style="font-family: 'Gilroy'; font-size: 40px; font-weight: 900; line-height: 1.2;">Оставьте свои контакты <br> и получите персональную скидку!</h5>
               <div class="mb-3">
-                <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
+                <input type="text" id="disabledTextInput" class="form-control" placeholder="Как вас зовут?">
               </div>
               <div class="mb-3">
-                <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
+                <input type="text" id="disabledTextInput" class="form-control" placeholder="+7 (999) 999-99-99">
               </div>
-            </div>
+                                                          
             <div class="modal-footer">
               <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"
                 data-bs-dismiss="modal">Back to first</button>
