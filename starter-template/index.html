@@ -33,6 +33,13 @@
       <!-- qwiz-->
 
       <style>
+
+#exampleModalToggle3 .btn-primary {
+      position: absolute;
+      bottom: 15px;
+      left: 86%;
+      transform: translateX(-50%);
+    }
         @font-face {
           font-family: 'Actay';
           src: url('../fonts/Actay-Regular.woff2') format('woff2'),
@@ -273,9 +280,8 @@
         tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-xl">
           <div class="modal-content">
-            <div class="modal-header d-flex justify-content-between">
-              <h4 class="modal-title" id="exampleModalToggleLabel"
-                style="margin-left: auto; font-family: 'Gilroy'; font-size: 50px;">2/3</h4>
+            <div class="modal-header d-flex justify-content-end">
+              <h4 class="modal-title" id="exampleModalToggleLabel">2/3</h4>
             </div>
             <div class="modal-body">
               <h5>
@@ -322,7 +328,8 @@
         tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-xl">
           <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header d-flex justify-content-end">
+              <h4 class="modal-title" id="exampleModalToggleLabel">3/3</h4>
             </div>
             <div class="modal-body">
               <h5>Оставьте свои
@@ -336,22 +343,38 @@
                   placeholder="+7 (999) 999-99-99">
               </div>
 
-              <div class="modal-footer d-flex justify-content-between"">
+              <div class="modal-footer d-flex justify-content-between">
                 <button  style="opacity: 0;" class="btn btn-secondary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">←
                   Назад</button>
-                <button class="btn btn-primary" data-bs-target="#exampleModalToggle3"
-                data-bs-toggle="modal">Отправить заявку</button>
+                  <button class="btn btn-primary" data-bs-target="#exampleModalToggle3"
+                  data-bs-toggle="modal">Отправить заявку</button>
               </div>
             </div>
           </div>
         </div>
 
         <script>
-          document.addEventListener('DOMContentLoaded', function () { // Аналог $(document).ready(function(){
+          document.addEventListener('DOMContentLoaded', function () {
             var myModal = new bootstrap.Modal(document.getElementById('exampleModalToggle'), {
               keyboard: false
-            })
-            myModal.show()
+            });
+            myModal.show();
+      
+            var firstModalContentHeight = document.getElementById('exampleModalToggle').querySelector('.modal-content').clientHeight;
+            var firstModalContentWidth = document.getElementById('exampleModalToggle').querySelector('.modal-content').clientWidth;
+      
+            var allModals = document.querySelectorAll('.modal');
+            allModals.forEach(function (modal) {
+              var modalContent = modal.querySelector('.modal-content');
+              modalContent.style.height = firstModalContentHeight + 'px';
+              modalContent.style.width = firstModalContentWidth + 'px';
+      
+              if (modal.id === 'exampleModalToggle3') {
+                var thirdModalButton = modal.querySelector('.btn-primary');
+                var thirdModalFooter = modal.querySelector('.modal-footer');
+                thirdModalFooter.appendChild(thirdModalButton);
+              }
+            });
           });
         </script>
         <!-- end qwiz-->
