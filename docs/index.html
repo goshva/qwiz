@@ -390,13 +390,10 @@
               <div class="mb-3 input-group">
                 <input type="text" id="phoneInput" class="input-custom form-control" placeholder="+7 (999) 999-99-99">
               </div>
-
               <div class="modal-footer d-flex justify-content-between">
-                <button class="btn btn-secondary" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">←
-                  Назад</button>
-                <button id="forwardButton2" class="btn btn-primary" data-bs-target="#exampleModalToggle3"
-                  data-bs-toggle="modal">Отправить заявку</button>
-              </div>
+                <button class="btn btn-secondary" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">← Назад</button>
+                <button id="forwardButton2" class="btn btn-primary">Отправить заявку</button>
+              </div>              
             </div>
           </div>
         </div>
@@ -446,16 +443,19 @@
             }
           });
 
-          forwardButton3.addEventListener('click', function () {
-            var nameInput = document.getElementById('nameInput').value;
-            var phoneInput = document.getElementById('phoneInput').value;
+          var submitButton = document.getElementById('forwardButton2');
 
-            if (nameInput.length >= 2 && phoneInput.length === 11) {
-              forwardButton3.removeAttribute('disabled');
-            } else {
-              forwardButton3.setAttribute('disabled', true);
+          submitButton.addEventListener('click', function(event) {
+            event.preventDefault();
+
+          var openModals = document.querySelectorAll('.modal.show');
+          openModals.forEach(function(modal) {
+            var modalInstance = bootstrap.Modal.getInstance(modal);
+            if (modalInstance) {
+              modalInstance.hide();
             }
           });
+        });
 
           var allRadios1 = document.querySelectorAll('input[name="flexRadioDefault"]');
           var allRadios2 = document.querySelectorAll('input[name="flexRadioDefault2"]');
