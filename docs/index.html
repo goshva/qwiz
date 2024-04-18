@@ -33,6 +33,11 @@
       <!-- qwiz-->
 
       <style>
+        .input-group {
+          padding-left: 1em;
+          padding-right: 1em;
+        }
+
         .input-group input {
           box-shadow: none;
           border-color: transparent !important
@@ -57,28 +62,22 @@
           border-color: transparent !important;
           box-shadow: none;
         }
-      
+
         .modal-dialog-centered {
           display: flex;
           align-items: center;
           min-height: calc(100vh - 3.5rem);
         }
-      
+
         #exampleModalToggle3 .modal-header {
           min-height: 6.75rem;
         }
-      
+
         #exampleModalToggle3 .modal-title {
           display: none;
         }
-      
-        #exampleModalToggle3 .btn-primary {
-          position: absolute;
-          bottom: 15px;
-          left: 50%;
-          transform: translateX(-50%);
-        }
-      
+
+
         @font-face {
           font-family: 'Actay';
           src: url('./fonts/Actay-Regular.woff2') format('woff2'),
@@ -88,7 +87,7 @@
           font-style: normal;
           font-display: swap;
         }
-      
+
         @font-face {
           font-family: 'ActayWide-Bold';
           src: url('./fonts/ActayWide-Bold.woff2') format('woff2'),
@@ -98,7 +97,7 @@
           font-style: normal;
           font-display: swap;
         }
-      
+
         @font-face {
           font-family: 'Space Grotesk';
           src: url('./fonts/SpaceGrotesk-Regular.eot');
@@ -110,27 +109,27 @@
           font-style: normal;
           font-display: swap;
         }
-      
+
         @font-face {
           font-family: 'Space Grotesk';
           src: url('./fonts/SpaceGrotesk-Bold.eot');
           src: url('./fonts/SpaceGrotesk-Bold.eot?#iefix') format('embedded-opentype'),
-          url('./fonts/SpaceGrotesk-Bold.woff2') format('woff2'),
-          url('./fonts/SpaceGrotesk-Bold.woff') format('woff'),
-          url('./fonts/SpaceGrotesk-Bold.ttf') format('truetype');
+            url('./fonts/SpaceGrotesk-Bold.woff2') format('woff2'),
+            url('./fonts/SpaceGrotesk-Bold.woff') format('woff'),
+            url('./fonts/SpaceGrotesk-Bold.ttf') format('truetype');
           font-weight: bold;
           font-style: normal;
           font-display: swap;
         }
-      
+
         body {
           font-family: 'Actay';
         }
-      
+
         .form-check {
           margin-bottom: 20px;
         }
-      
+
         h5 {
           font-family: "Actay";
           font-size: 2em;
@@ -138,23 +137,23 @@
           line-height: 4em;
           text-align: left;
         }
-      
+
         .modal-content .modal-header {
           background-color: #ECECEC;
           border-bottom-color: #D9D9D9;
           border-bottom-width: 0.5em;
           padding: 2em;
         }
-      
+
         .modal-title h4 {
           font-family: "Actay";
         }
-      
+
         .modal-footer {
           background: rgba(255, 255, 255, 1);
-          border-top:none;
+          border-top: none;
         }
-      
+
         .modal-footer button {
           font-family: "Actay";
           font-size: 1em;
@@ -167,7 +166,7 @@
           border: 0.3em solid rgba(236, 236, 236, 1);
           border-radius: 1em;
         }
-      
+
         .modal-footer button:nth-child(1) {
           margin-left: 1em;
           background: #E0E0E0;
@@ -175,7 +174,7 @@
           text-align: center;
           line-height: normal;
         }
-      
+
         .modal-footer button:nth-child(2) {
           background: #FD7021;
           font-family: "Actay";
@@ -183,7 +182,7 @@
           line-height: normal;
           min-width: 20%;
         }
-      
+
         .answer-container .answer-label {
           font-family: "Actay";
           font-size: 2em;
@@ -191,13 +190,13 @@
           margin: 0;
           font-weight: 100;
         }
-      
+
         .answer-container .form-check-input {
           margin: 10px 10px 10px 20px;
           border: 5px solid #FD7021;
           padding: 15px;
         }
-      
+
         .answer-container {
           display: flex;
           align-items: center;
@@ -210,7 +209,7 @@
           padding: 0px;
           padding-left: 0;
         }
-      
+
         .bd-placeholder-img {
           font-size: 1.125rem;
           text-anchor: middle;
@@ -218,16 +217,11 @@
           -moz-user-select: none;
           user-select: none;
         }
-      
+
         @media (orientation: portrait) {
           .bd-placeholder-img-lg {
             font-size: 3.5rem;
           }
-        }
-
-        #exampleModalToggle3 .btn-primary {
-          left: 45%; 
-          transform: translateX(-50%);
         }
 
         .answer-container .answer-label {
@@ -237,7 +231,7 @@
           margin: 0;
           font-weight: 100;
         }
-      
+
         .modal-body h5 {
           font-family: 'Actay';
           font-weight: bold;
@@ -245,30 +239,31 @@
           padding-left: 1em;
           line-height: 2em;
         }
-      
+
         .modal-header {
           background-color: #ececec;
           border-bottom: none;
         }
-      
-        .input-custom {
+
+        .input-group .input-custom {
           padding-top: 1.5rem !important;
           padding-bottom: 1.5rem !important;
           border-radius: 0 !important;
           color: #BBBDC2 !important;
           font-family: "Actay", sans-serif;
-          border-bottom: 2px solid #dee2e6 !important;
+          outline: #cecece;
+
+          border-bottom: 2px solid #cecece55 !important;
           border-top: none;
           border-left: none;
           border-right: none;
         }
-      
+
         .input-custom:hover {
           outline: #F5802A;
         }
-        
       </style>
-      
+
       <div class="modal" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
         tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-xl">
@@ -310,7 +305,8 @@
               </div>
             </div>
             <div class="modal-footer d-flex justify-content-between">
-              <button id="forwardButton1Modal1" class="btn btn-secondary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">←
+              <button id="forwardButton1Modal1" class="btn btn-secondary" data-bs-target="#exampleModalToggle"
+                data-bs-toggle="modal">←
                 Назад</button>
               <button id="forwardButton2Modal1" class="btn btn-primary" data-bs-target="#exampleModalToggle2"
                 data-bs-toggle="modal">Вперед →</button>
@@ -358,7 +354,8 @@
               </div>
             </div>
             <div class="modal-footer d-flex justify-content-between">
-              <button id="forwardButton1Modal2" class="btn btn-secondary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">←
+              <button id="forwardButton1Modal2" class="btn btn-secondary" data-bs-target="#exampleModalToggle2"
+                data-bs-toggle="modal">←
                 Назад</button>
               <button id="forwardButton2Modal2" class="btn btn-primary" data-bs-target="#exampleModalToggle3"
                 data-bs-toggle="modal">Вперед →</button>
@@ -377,144 +374,142 @@
               <h5>Оставьте свои
                 контакты <br> и получите персональную скидку!</h5>
               <div class="mb-3 input-group">
-                <input type="text" id="nameInput" class="input-custom form-control"
-                  placeholder="Как вас зовут?">
+                <input type="text" id="nameInput" class="input-custom form-control" placeholder="Как вас зовут?">
               </div>
               <div class="mb-3 input-group">
-                <input type="text" id="phoneInput" class="input-custom form-control"
-                  placeholder="+7 (999) 999-99-99">
+                <input type="text" id="phoneInput" class="input-custom form-control" placeholder="+7 (999) 999-99-99">
               </div>
 
               <div class="modal-footer d-flex justify-content-between">
-                <button  style="opacity: 0;" class="btn btn-secondary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">←
+                <button class="btn btn-secondary" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">←
                   Назад</button>
-                  <button id="forwardButton2" class="btn btn-primary" data-bs-target="#exampleModalToggle3"
+                <button id="forwardButton2" class="btn btn-primary" data-bs-target="#exampleModalToggle3"
                   data-bs-toggle="modal">Отправить заявку</button>
               </div>
             </div>
           </div>
         </div>
+      </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          var myModal = new bootstrap.Modal(document.getElementById('exampleModalToggle'), {
+            keyboard: false
+          });
+          myModal.show();
 
-        <script>
-          document.addEventListener('DOMContentLoaded', function () {
-            var myModal = new bootstrap.Modal(document.getElementById('exampleModalToggle'), {
-              keyboard: false
+          var firstModalContentHeight = document.getElementById('exampleModalToggle').querySelector('.modal-content').clientHeight;
+          var firstModalContentWidth = document.getElementById('exampleModalToggle').querySelector('.modal-content').clientWidth;
+
+          var allModals = document.querySelectorAll('.modal');
+          allModals.forEach(function (modal) {
+            var modalContent = modal.querySelector('.modal-content');
+            modalContent.style.height = firstModalContentHeight + 'px';
+            modalContent.style.width = firstModalContentWidth + 'px';
+
+            if (modal.id === 'exampleModalToggle3') {
+              var thirdModalButton = modal.querySelector('.btn-primary');
+              var thirdModalFooter = modal.querySelector('.modal-footer');
+              thirdModalFooter.appendChild(thirdModalButton);
+            }
+          });
+
+          var forwardButton1 = document.getElementById('forwardButton2Modal1');
+          var forwardButton2 = document.getElementById('forwardButton2Modal2');
+          var forwardButton3 = document.getElementById('forwardButton2');
+
+          forwardButton1.disabled = true;
+          forwardButton2.disabled = true;
+          forwardButton3.disabled = true;
+
+          forwardButton1.addEventListener('click', function () {
+            var checkedRadio = document.querySelector('input[name="flexRadioDefault"]:checked');
+            if (!checkedRadio) {
+              return;
+            }
+          });
+
+          forwardButton2.addEventListener('click', function () {
+            var checkedRadio = document.querySelector('input[name="flexRadioDefault2"]:checked');
+            if (!checkedRadio) {
+              return;
+            }
+          });
+
+          forwardButton3.addEventListener('click', function () {
+            var nameInput = document.getElementById('nameInput').value;
+            var phoneInput = document.getElementById('phoneInput').value;
+
+            if (nameInput.length >= 2 && phoneInput.length === 11) {
+              forwardButton3.removeAttribute('disabled');
+            } else {
+              forwardButton3.setAttribute('disabled', true);
+            }
+          });
+
+          var allRadios1 = document.querySelectorAll('input[name="flexRadioDefault"]');
+          var allRadios2 = document.querySelectorAll('input[name="flexRadioDefault2"]');
+          var allRadios3 = document.querySelectorAll('input[name="flexRadioDefault3"]');
+
+          allRadios1.forEach(function (radio) {
+            radio.addEventListener('change', function () {
+              forwardButton1.removeAttribute('disabled');
             });
-            myModal.show();
-        
-            var firstModalContentHeight = document.getElementById('exampleModalToggle').querySelector('.modal-content').clientHeight;
-            var firstModalContentWidth = document.getElementById('exampleModalToggle').querySelector('.modal-content').clientWidth;
-        
-            var allModals = document.querySelectorAll('.modal');
-            allModals.forEach(function (modal) {
-              var modalContent = modal.querySelector('.modal-content');
-              modalContent.style.height = firstModalContentHeight + 'px';
-              modalContent.style.width = firstModalContentWidth + 'px';
-        
-              if (modal.id === 'exampleModalToggle3') {
-                var thirdModalButton = modal.querySelector('.btn-primary');
-                var thirdModalFooter = modal.querySelector('.modal-footer');
-                thirdModalFooter.appendChild(thirdModalButton);
-              }
+          });
+
+          allRadios2.forEach(function (radio) {
+            radio.addEventListener('change', function () {
+              forwardButton2.removeAttribute('disabled');
             });
-        
-            var forwardButton1 = document.getElementById('forwardButton2Modal1');
-            var forwardButton2 = document.getElementById('forwardButton2Modal2');
-            var forwardButton3 = document.getElementById('forwardButton2');
-        
-            forwardButton1.disabled = true;
-            forwardButton2.disabled = true;
-            forwardButton3.disabled = true;
-        
-            forwardButton1.addEventListener('click', function () {
-              var checkedRadio = document.querySelector('input[name="flexRadioDefault"]:checked');
-              if (!checkedRadio) {
-                return;
-              }
-            });
-        
-            forwardButton2.addEventListener('click', function () {
-              var checkedRadio = document.querySelector('input[name="flexRadioDefault2"]:checked');
-              if (!checkedRadio) {
-                return;
-              }
-            });
-        
-            forwardButton3.addEventListener('click', function () {
+          });
+
+          allRadios3.forEach(function (radio) {
+            radio.addEventListener('change', function () {
               var nameInput = document.getElementById('nameInput').value;
               var phoneInput = document.getElementById('phoneInput').value;
-        
+
               if (nameInput.length >= 2 && phoneInput.length === 11) {
                 forwardButton3.removeAttribute('disabled');
               } else {
                 forwardButton3.setAttribute('disabled', true);
               }
             });
-        
-            var allRadios1 = document.querySelectorAll('input[name="flexRadioDefault"]');
-            var allRadios2 = document.querySelectorAll('input[name="flexRadioDefault2"]');
-            var allRadios3 = document.querySelectorAll('input[name="flexRadioDefault3"]');
-        
-            allRadios1.forEach(function (radio) {
-              radio.addEventListener('change', function () {
-                forwardButton1.removeAttribute('disabled');
-              });
-            });
-        
-            allRadios2.forEach(function (radio) {
-              radio.addEventListener('change', function () {
-                forwardButton2.removeAttribute('disabled');
-              });
-            });
-        
-            allRadios3.forEach(function (radio) {
-              radio.addEventListener('change', function () {
-                var nameInput = document.getElementById('nameInput').value;
-                var phoneInput = document.getElementById('phoneInput').value;
-        
-                if (nameInput.length >= 2 && phoneInput.length === 11) {
-                  forwardButton3.removeAttribute('disabled');
-                } else {
-                  forwardButton3.setAttribute('disabled', true);
-                }
-              });
-            });
-        
-            var nameInput = document.getElementById('nameInput');
-            var phoneInput = document.getElementById('phoneInput');
-        
-            nameInput.addEventListener('input', function () {
-              var nameInputValue = nameInput.value.trim();
-              if (nameInputValue.length >= 2 && phoneInput.value.length === 11) {
-                forwardButton3.removeAttribute('disabled');
-              } else {
-                forwardButton3.setAttribute('disabled', true);
+          });
+
+          var nameInput = document.getElementById('nameInput');
+          var phoneInput = document.getElementById('phoneInput');
+
+          nameInput.addEventListener('input', function () {
+            var nameInputValue = nameInput.value.trim();
+            if (nameInputValue.length >= 2 && phoneInput.value.length === 11) {
+              forwardButton3.removeAttribute('disabled');
+            } else {
+              forwardButton3.setAttribute('disabled', true);
+            }
+          });
+
+          phoneInput.addEventListener('input', function () {
+            var phoneInputValue = phoneInput.value.trim();
+            if (nameInput.value.length >= 2 && phoneInputValue.length === 12) {
+              forwardButton3.removeAttribute('disabled');
+            } else {
+              forwardButton3.setAttribute('disabled', true);
+            }
+          });
+
+          var textElements = document.querySelectorAll('.answer-container');
+          textElements.forEach(function (element) {
+            element.addEventListener('click', function () {
+              var radio = element.querySelector('input[type="radio"]');
+              if (radio) {
+                radio.checked = true;
+                radio.dispatchEvent(new Event('change'));
               }
-            });
-        
-            phoneInput.addEventListener('input', function () {
-              var phoneInputValue = phoneInput.value.trim();
-              if (nameInput.value.length >= 2 && phoneInputValue.length === 12) {
-                forwardButton3.removeAttribute('disabled');
-              } else {
-                forwardButton3.setAttribute('disabled', true);
-              }
-            });
-        
-            var textElements = document.querySelectorAll('.answer-container');
-            textElements.forEach(function (element) {
-              element.addEventListener('click', function () {
-                var radio = element.querySelector('input[type="radio"]');
-                if (radio) {
-                  radio.checked = true;
-                  radio.dispatchEvent(new Event('change')); 
-                }
-              });
             });
           });
-        </script>
-                                
-        <!-- end qwiz-->
+        });
+      </script>
+
+      <!-- end qwiz-->
 
     </main>
     <footer class="pt-5 my-5 text-muted border-top">
