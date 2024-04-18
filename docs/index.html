@@ -33,6 +33,17 @@
       <!-- qwiz-->
 
       <style>
+        .input-group input {
+          box-shadow: none;
+          border-color: transparent !important
+        }
+
+        .input-group input:focus {
+          box-shadow: none;
+          border-color: #FD7021 !important;
+          border-width: 0 0 2px 0 !important
+        }
+
         .form-check-input:checked {
           background-color: #FD7021;
           border-color: #FD7021;
@@ -64,7 +75,7 @@
         #exampleModalToggle3 .btn-primary {
           position: absolute;
           bottom: 15px;
-          left: 86%;
+          left: 50%;
           transform: translateX(-50%);
         }
       
@@ -365,11 +376,11 @@
             <div class="modal-body">
               <h5>Оставьте свои
                 контакты <br> и получите персональную скидку!</h5>
-              <div class="mb-3">
+              <div class="mb-3 input-group">
                 <input type="text" id="nameInput" class="input-custom form-control"
                   placeholder="Как вас зовут?">
               </div>
-              <div class="mb-3">
+              <div class="mb-3 input-group">
                 <input type="text" id="phoneInput" class="input-custom form-control"
                   placeholder="+7 (999) 999-99-99">
               </div>
@@ -490,7 +501,7 @@
               }
             });
         
-            var textElements = document.querySelectorAll('.text-container');
+            var textElements = document.querySelectorAll('.answer-container');
             textElements.forEach(function (element) {
               element.addEventListener('click', function () {
                 var radio = element.querySelector('input[type="radio"]');
