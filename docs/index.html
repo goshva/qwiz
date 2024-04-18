@@ -39,49 +39,43 @@
           border-color: transparent !important;
           box-shadow: none;
         }
-        
+      
+        .modal-dialog-centered {
+          display: flex;
+          align-items: center;
+          min-height: calc(100vh - 3.5rem);
+        }
+      
         #exampleModalToggle3 .modal-header {
           min-height: 6.75rem;
         }
-        
+      
         #exampleModalToggle3 .modal-title {
-          display:none;
+          display: none;
         }
-
+      
         #exampleModalToggle3 .btn-primary {
           position: absolute;
           bottom: 15px;
           left: 86%;
           transform: translateX(-50%);
-        
-      }
-
+        }
+      
         @font-face {
           font-family: 'Actay';
-          src: url('../fonts/Actay-Regular.woff2') format('woff2'),
-            url('../fonts/Actay-Regular.woff') format('woff'),
-            url('../fonts/Actay-Regular.ttf') format('truetype');
+          src: url('./fonts/Actay-Regular.woff2') format('woff2'),
+            url('./fonts/Actay-Regular.woff') format('woff'),
+            url('./fonts/Actay-Regular.ttf') format('truetype');
           font-weight: normal;
           font-style: normal;
           font-display: swap;
         }
 
         @font-face {
-          font-family: 'Actay Condensed';
-          src: url('ActayCondensed-Thin.woff2') format('woff2'),
-            url('ActayCondensed-Thin.woff') format('woff'),
-            url('ActayCondensed-Thin.ttf') format('truetype');
-          font-weight: 100;
-          font-style: normal;
-          font-display: swap;
-        }
-
-
-        @font-face {
-          font-family: 'Actay';
-          src: url('../fonts/ActayWide-Bold.woff2') format('woff2'),
-            url('../fonts/ActayWide-Bold.woff') format('woff'),
-            url('../fonts/ActayWide-Bold.ttf') format('truetype');
+          font-family: 'ActayWide-Bold';
+          src: url('./fonts/ActayWide-Bold.woff2') format('woff2'),
+            url('./fonts/ActayWide-Bold.woff') format('woff'),
+            url('./fonts/ActayWide-Bold.ttf') format('truetype');
           font-weight: bold;
           font-style: normal;
           font-display: swap;
@@ -89,11 +83,11 @@
 
         @font-face {
           font-family: 'Space Grotesk';
-          src: url('../fonts/SpaceGrotesk-Regular.eot');
-          src: url('../fonts/SpaceGrotesk-Regular.eot?#iefix') format('embedded-opentype'),
-            url('../fonts/SpaceGrotesk-Regular.woff2') format('woff2'),
-            url('../fonts/SpaceGrotesk-Regular.woff') format('woff'),
-            url('../fonts/SpaceGrotesk-Regular.ttf') format('truetype');
+          src: url('./fonts/SpaceGrotesk-Regular.eot');
+          src: url('./fonts/SpaceGrotesk-Regular.eot?#iefix') format('embedded-opentype'),
+            url('./fonts/SpaceGrotesk-Regular.woff2') format('woff2'),
+            url('./fonts/SpaceGrotesk-Regular.woff') format('woff'),
+            url('./fonts/SpaceGrotesk-Regular.ttf') format('truetype');
           font-weight: normal;
           font-style: normal;
           font-display: swap;
@@ -101,24 +95,24 @@
 
         @font-face {
           font-family: 'Space Grotesk';
-          src: url('../fonts/SpaceGrotesk-Bold.eot');
-          src: url('../fonts/SpaceGrotesk-Bold.eot?#iefix') format('embedded-opentype'),
-            url('../fonts/SpaceGrotesk-Bold.woff2') format('woff2'),
-            url('../fonts/SpaceGrotesk-Bold.woff') format('woff'),
-            url('../fonts/SpaceGrotesk-Bold.ttf') format('truetype');
-          font-weight: bold;
-          font-style: normal;
-          font-display: swap;
+          src: url('./fonts/SpaceGrotesk-Bold.eot');
+          src: url('./fonts/SpaceGrotesk-Bold.eot?#iefix') format('embedded-opentype'),
+          url('./fonts/SpaceGrotesk-Bold.woff2') format('woff2'),
+          url('./fonts/SpaceGrotesk-Bold.woff') format('woff'),
+          url('./fonts/SpaceGrotesk-Bold.ttf') format('truetype');
+         font-weight: bold;
+        font-style: normal;
+        font-display: swap;
         }
-
+      
         body {
           font-family: 'Actay';
         }
-
+      
         .form-check {
           margin-bottom: 20px;
         }
-
+      
         h5 {
           font-family: "Actay";
           font-size: 2em;
@@ -126,22 +120,23 @@
           line-height: 4em;
           text-align: left;
         }
-
+      
         .modal-content .modal-header {
           background-color: #ECECEC;
           border-bottom-color: #D9D9D9;
           border-bottom-width: 0.5em;
           padding: 2em;
         }
-
+      
         .modal-title h4 {
           font-family: "Actay";
         }
-
+      
         .modal-footer {
           background: rgba(255, 255, 255, 1);
+          border-top:none;
         }
-
+      
         .modal-footer button {
           font-family: "Actay";
           font-size: 1em;
@@ -154,7 +149,7 @@
           border: 0.3em solid rgba(236, 236, 236, 1);
           border-radius: 1em;
         }
-
+      
         .modal-footer button:nth-child(1) {
           margin-left: 1em;
           background: #E0E0E0;
@@ -162,7 +157,7 @@
           text-align: center;
           line-height: normal;
         }
-
+      
         .modal-footer button:nth-child(2) {
           background: #FD7021;
           font-family: "Actay";
@@ -170,23 +165,21 @@
           line-height: normal;
           min-width: 20%;
         }
-
-
+      
         .answer-container .answer-label {
           font-family: "Actay";
           font-size: 2em;
           color: #000000;
           margin: 0;
           font-weight: 100;
-
         }
-
+      
         .answer-container .form-check-input {
           margin: 10px 10px 10px 20px;
           border: 5px solid #FD7021;
           padding: 15px;
         }
-
+      
         .answer-container {
           display: flex;
           align-items: center;
@@ -197,11 +190,9 @@
           border: 2px solid #9E9E9E;
           background: #F7F7F7;
           padding: 0px;
-          padding-left: 0
+          padding-left: 0;
         }
-
-
-
+      
         .bd-placeholder-img {
           font-size: 1.125rem;
           text-anchor: middle;
@@ -209,24 +200,25 @@
           -moz-user-select: none;
           user-select: none;
         }
-
+      
         @media (min-width: 768px) {
           .bd-placeholder-img-lg {
             font-size: 3.5rem;
           }
         }
-
+      
         .modal-body h5 {
           font-family: 'Actay';
           font-weight: bold;
           font-size: 2em;
           padding-left: 1em;
         }
-
+      
         .modal-header {
           background-color: #ececec;
+          border-bottom: none;
         }
-
+      
         .input-custom {
           padding-top: 1.5rem !important;
           padding-bottom: 1.5rem !important;
@@ -234,15 +226,15 @@
           color: #BBBDC2 !important;
           font-family: "Actay", sans-serif;
           border-bottom: 2px solid #dee2e6 !important;
-          border-top:none ;
-          border-left:none ;
-          border-right:none ;
+          border-top: none;
+          border-left: none;
+          border-right: none;
         }
-
+      
         .input-custom:hover {
           outline: #F5802A;
         }
-      </style>
+      </style>   
       <div class="modal" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
         tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-xl">
