@@ -33,6 +33,7 @@
       <!-- qwiz-->
 
       <style>
+      
         .btn-primary:focus,
         .btn-primary:active,
         .btn-primary:hover {
@@ -70,7 +71,7 @@
           font-style: normal;
           font-display: swap;
         }
-
+      
         @font-face {
           font-family: 'ActayWide-Bold';
           src: url('./fonts/ActayWide-Bold.woff2') format('woff2'),
@@ -80,7 +81,7 @@
           font-style: normal;
           font-display: swap;
         }
-
+      
         @font-face {
           font-family: 'Space Grotesk';
           src: url('./fonts/SpaceGrotesk-Regular.eot');
@@ -92,7 +93,7 @@
           font-style: normal;
           font-display: swap;
         }
-
+      
         @font-face {
           font-family: 'Space Grotesk';
           src: url('./fonts/SpaceGrotesk-Bold.eot');
@@ -100,9 +101,9 @@
           url('./fonts/SpaceGrotesk-Bold.woff2') format('woff2'),
           url('./fonts/SpaceGrotesk-Bold.woff') format('woff'),
           url('./fonts/SpaceGrotesk-Bold.ttf') format('truetype');
-         font-weight: bold;
-        font-style: normal;
-        font-display: swap;
+          font-weight: bold;
+          font-style: normal;
+          font-display: swap;
         }
       
         body {
@@ -201,10 +202,23 @@
           user-select: none;
         }
       
-        @media (min-width: 768px) {
+        @media (orientation: portrait) {
           .bd-placeholder-img-lg {
             font-size: 3.5rem;
           }
+        }
+
+        #exampleModalToggle3 .btn-primary {
+          left: 50%; 
+          transform: translateX(-50%);
+        }
+
+        .answer-container .answer-label {
+          font-family: "Actay";
+          font-size: 1.25em;
+          color: #000000;
+          margin: 0;
+          font-weight: 100;
         }
       
         .modal-body h5 {
@@ -212,6 +226,7 @@
           font-weight: bold;
           font-size: 2em;
           padding-left: 1em;
+          line-height: 2em;
         }
       
         .modal-header {
@@ -234,7 +249,9 @@
         .input-custom:hover {
           outline: #F5802A;
         }
-      </style>   
+        
+      </style>
+      
       <div class="modal" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
         tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-xl">
