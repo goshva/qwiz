@@ -11,107 +11,6 @@
   <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/starter-template/">
   <!-- Bootstrap core CSS -->
   <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <style>
-    .form-check {
-  margin-bottom: 20px;
-    }
-    h5 {
-  font-family: Gilroy;
-  font-size: 170px;
-  font-weight: 900;
-  line-height: 214.54px;
-  text-align: left;
-}
-
-.modal-footer {
-  border: 12px solid rgba(236, 236, 236, 1);
-  background: rgba(255, 255, 255, 1);
-}
-
-.modal-footer button {
-  font-family: Gilroy;
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 99.04px;
-  text-align: left;
-  background: rgba(255, 255, 255, 1);
-}
-
-.modal-footer button:nth-child(1) {
-  width: 250px;
-  height: 100px;
-  border: 12px solid rgba(236, 236, 236, 1);
-  border-radius: 30px;
-  background: #E0E0E0;
-  font-family: Gilroy;
-  font-size: 40px;
-  text-align: center;
-  line-height: normal;
-}
-
-.modal-footer button:nth-child(2) {
-  width: 300px;
-  height: 100px;
-  border: 12px solid rgba(236, 236, 236, 1);
-  border-radius: 30px;
-  background: #FD7021;
-  font-family: Gilroy;
-  font-size: 35px;
-  text-align: center;
-  line-height: normal;
-}
-
-
-    .answer-container .answer-label {
-      font-family: 'Gilroy';
-      font-size: 35px;
-      color: #000000;
-      margin: 0;
-    }
-
-    .answer-container .form-check-input {
-      margin: 10px; 
-    }
-
-    .answer-container {
-  display: flex;
-  align-items: center;
-  width: 1000px;
-  height: 70px;
-  gap: 10px; 
-  border-radius: 99px;
-  border: 2px solid #9E9E9E;
-  background: #F7F7F7;
-  padding: 0px;
-  padding-left: 
-}
-
-    .answer-label {
-      font-family: 'Gilroy';
-      font-size: 20px;
-      line-height: 50px;
-      text-align: left;
-      color: #000000;
-    }
-
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      user-select: none;
-    }
-
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-  </style>
-
-
-  <!-- Custom styles for this template -->
   <link href="starter-template.css" rel="stylesheet">
 </head>
 
@@ -132,126 +31,330 @@
 
     <main>
       <!-- qwiz-->
+
       <style>
+        @font-face {
+          font-family: 'Actay';
+          src: url('../fonts/Actay-Regular.woff2') format('woff2'),
+            url('../fonts/Actay-Regular.woff') format('woff'),
+            url('../fonts/Actay-Regular.ttf') format('truetype');
+          font-weight: normal;
+          font-style: normal;
+          font-display: swap;
+        }
+
+        @font-face {
+          font-family: 'Actay Condensed';
+          src: url('ActayCondensed-Thin.woff2') format('woff2'),
+            url('ActayCondensed-Thin.woff') format('woff'),
+            url('ActayCondensed-Thin.ttf') format('truetype');
+          font-weight: 100;
+          font-style: normal;
+          font-display: swap;
+        }
+
+
+        @font-face {
+          font-family: 'Actay';
+          src: url('../fonts/ActayWide-Bold.woff2') format('woff2'),
+            url('../fonts/ActayWide-Bold.woff') format('woff'),
+            url('../fonts/ActayWide-Bold.ttf') format('truetype');
+          font-weight: bold;
+          font-style: normal;
+          font-display: swap;
+        }
+
+        @font-face {
+          font-family: 'Space Grotesk';
+          src: url('../fonts/SpaceGrotesk-Regular.eot');
+          src: url('../fonts/SpaceGrotesk-Regular.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/SpaceGrotesk-Regular.woff2') format('woff2'),
+            url('../fonts/SpaceGrotesk-Regular.woff') format('woff'),
+            url('../fonts/SpaceGrotesk-Regular.ttf') format('truetype');
+          font-weight: normal;
+          font-style: normal;
+          font-display: swap;
+        }
+
+        @font-face {
+          font-family: 'Space Grotesk';
+          src: url('../fonts/SpaceGrotesk-Bold.eot');
+          src: url('../fonts/SpaceGrotesk-Bold.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/SpaceGrotesk-Bold.woff2') format('woff2'),
+            url('../fonts/SpaceGrotesk-Bold.woff') format('woff'),
+            url('../fonts/SpaceGrotesk-Bold.ttf') format('truetype');
+          font-weight: bold;
+          font-style: normal;
+          font-display: swap;
+        }
+
+        body {
+          font-family: 'Actay';
+        }
+
+        .form-check {
+          margin-bottom: 20px;
+        }
+
+        h5 {
+          font-family: "Actay";
+          font-size: 2em;
+          font-weight: 900;
+          line-height: 4em;
+          text-align: left;
+        }
+
+        .modal-content .modal-header {
+          background-color: #ECECEC;
+          border-bottom-color: #D9D9D9;
+          border-bottom-width: 0.5em;
+          padding: 2em;
+        }
+
+        .modal-title h4 {
+          font-family: "Actay";
+        }
+
+        .modal-footer {
+          background: rgba(255, 255, 255, 1);
+        }
+
+        .modal-footer button {
+          font-family: "Actay";
+          font-size: 1em;
+          font-weight: 600;
+          line-height: 99.04px;
+          text-align: left;
+          background: rgba(255, 255, 255, 1);
+          padding: 1em;
+          margin: 1em;
+          border: 0.3em solid rgba(236, 236, 236, 1);
+          border-radius: 1em;
+        }
+
+        .modal-footer button:nth-child(1) {
+          margin-left: 1em;
+          background: #E0E0E0;
+          font-family: "Actay";
+          text-align: center;
+          line-height: normal;
+        }
+
+        .modal-footer button:nth-child(2) {
+          background: #FD7021;
+          font-family: "Actay";
+          text-align: center;
+          line-height: normal;
+          min-width: 20%;
+        }
+
+
+        .answer-container .answer-label {
+          font-family: "Actay";
+          font-size: 2em;
+          color: #000000;
+          margin: 0;
+          font-weight: 100;
+
+        }
+
+        .answer-container .form-check-input {
+          margin: 10px 10px 10px 20px;
+          border: 5px solid #FD7021;
+          padding: 15px;
+        }
+
+        .answer-container {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          height: 5em;
+          gap: 10px;
+          border-radius: 1.5em;
+          border: 2px solid #9E9E9E;
+          background: #F7F7F7;
+          padding: 0px;
+          padding-left: 0
+        }
+
+
+
+        .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          user-select: none;
+        }
+
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
+        }
+
+        .modal-body h5 {
+          font-family: 'Actay';
+          font-weight: bold;
+          font-size: 2em;
+          padding-left: 1em;
+        }
+
         .modal-header {
           background-color: #ececec;
         }
+
+        .input-custom {
+          padding-top: 1.5rem !important;
+          padding-bottom: 1.5rem !important;
+          border-radius: 0 !important;
+          color: #BBBDC2 !important;
+          font-family: "Actay", sans-serif;
+          border-bottom: 2px solid #dee2e6 !important;
+          border-top:none ;
+          border-left:none ;
+          border-right:none ;
+        }
+
+        .input-custom:hover {
+          outline: #F5802A;
+        }
       </style>
-      <div class="modal" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+      <div class="modal" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+        tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-xl">
           <div class="modal-content">
-            <div class="modal-header d-flex justify-content-between">
-              <h4 class="modal-title" id="exampleModalToggleLabel" style="margin-left: auto; font-family: 'Gilroy'; font-size: 50px;">1/3</h4>
+            <div class="modal-header d-flex justify-content-end">
+              <h4 class="modal-title" id="exampleModalToggleLabel">1/3</h4>
             </div>
             <div class="modal-body">
-              <h5 style="font-family: 'Gilroy'; font-size: 50px; font-weight: 900; line-height: 214.54px; text-align: left;">Какую помощь вы бы хотели получить в ОАЭ?</h5>
+              <h5>
+                Какую помощь вы бы хотели получить в ОАЭ?</h5>
               <div class="form-check">
                 <div class="answer-container">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" style="border: 2px solid #FD7021;">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                    style="border: 2px solid #FD7021;">
                   <label class="form-check-label answer-label" for="flexRadioDefault1">Открытие бизнеса</label>
                 </div>
               </div>
               <div class="form-check">
                 <div class="answer-container">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" style="border: 2px solid #FD7021;">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                    style="border: 2px solid #FD7021;">
                   <label class="form-check-label answer-label" for="flexRadioDefault2">Бухгалтерские услуги</label>
                 </div>
               </div>
               <div class="form-check">
                 <div class="answer-container">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" style="border: 2px solid #FD7021;">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3"
+                    style="border: 2px solid #FD7021;">
                   <label class="form-check-label answer-label" for="flexRadioDefault3">Юридические услуги</label>
                 </div>
               </div>
               <div class="form-check">
                 <div class="answer-container">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" style="border: 2px solid #FD7021;">
-                  <label class="form-check-label answer-label" for="flexRadioDefault4">Открытие банковского счета</label>
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4"
+                    style="border: 2px solid #FD7021;">
+                  <label class="form-check-label answer-label" for="flexRadioDefault4">Открытие банковского
+                    счета</label>
                 </div>
               </div>
             </div>
             <div class="modal-footer d-flex justify-content-between">
-              <button class="btn btn-secondary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">← Назад</button>
-              <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Вперед →</button>
+              <button class="btn btn-secondary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">←
+                Назад</button>
+              <button class="btn btn-primary" data-bs-target="#exampleModalToggle2"
+                data-bs-toggle="modal">Вперед →</button>
             </div>
           </div>
         </div>
-      </div>      
+      </div>
       <div class="modal" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
         tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-xl">
           <div class="modal-content">
             <div class="modal-header d-flex justify-content-between">
-              <h4 class="modal-title" id="exampleModalToggleLabel" style="margin-left: auto; font-family: 'Gilroy'; font-size: 50px;">2/3</h4>
+              <h4 class="modal-title" id="exampleModalToggleLabel"
+                style="margin-left: auto; font-family: 'Gilroy'; font-size: 50px;">2/3</h4>
             </div>
             <div class="modal-body">
-              <h5 style="font-family: 'Gilroy'; font-size: 45px; font-weight: 900; line-height: 214.54px; text-align: left;">В какое время планируете воспользоваться услугой?</h5>
+              <h5>
+                В какое время планируете воспользоваться услугой?</h5>
               <div class="form-check">
                 <div class="answer-container">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault5" style="border: 2px solid #FD7021;">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault5"
+                    style="border: 2px solid #FD7021;">
                   <label class="form-check-label answer-label" for="flexRadioDefault5">Как можно скорее</label>
                 </div>
               </div>
               <div class="form-check">
                 <div class="answer-container">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault7" style="border: 2px solid #FD7021;">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault7"
+                    style="border: 2px solid #FD7021;">
                   <label class="form-check-label answer-label" for="flexRadioDefault6">В течении месяца</label>
                 </div>
               </div>
               <div class="form-check">
                 <div class="answer-container">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault7" style="border: 2px solid #FD7021;">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault7"
+                    style="border: 2px solid #FD7021;">
                   <label class="form-check-label answer-label" for="flexRadioDefault7">В течении 6 месяцев</label>
                 </div>
               </div>
               <div class="form-check">
                 <div class="answer-container">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault8" style="border: 2px solid #FD7021;">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault8"
+                    style="border: 2px solid #FD7021;">
                   <label class="form-check-label answer-label" for="flexRadioDefault8">В течении года</label>
                 </div>
               </div>
             </div>
             <div class="modal-footer d-flex justify-content-between">
-              <button class="btn btn-secondary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">← Назад</button>
-              <button class="btn btn-primary" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">Вперед →</button>
+              <button class="btn btn-secondary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">←
+                Назад</button>
+              <button class="btn btn-primary" data-bs-target="#exampleModalToggle3"
+                data-bs-toggle="modal">Вперед →</button>
             </div>
           </div>
         </div>
-      </div>      
+      </div>
       <div class="modal" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel3"
         tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-xl">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title" id="exampleModalToggleLabel" style="margin-left: auto; font-family: 'Gilroy'; font-size: 50px;">3/3</h4>
             </div>
             <div class="modal-body">
-              <h5 style="font-family: 'Gilroy'; font-size: 40px; font-weight: 900; line-height: 1.2;">Оставьте свои контакты <br> и получите персональную скидку!</h5>
+              <h5>Оставьте свои
+                контакты <br> и получите персональную скидку!</h5>
               <div class="mb-3">
-                <input type="text" id="disabledTextInput" class="form-control" placeholder="Как вас зовут?">
+                <input type="text" id="disabledTextInput" class="input-custom form-control"
+                  placeholder="Как вас зовут?">
               </div>
               <div class="mb-3">
-                <input type="text" id="disabledTextInput" class="form-control" placeholder="+7 (999) 999-99-99">
+                <input type="text" id="disabledTextInput" class="input-custom form-control"
+                  placeholder="+7 (999) 999-99-99">
               </div>
-                                                          
-            <div class="modal-footer">
-              <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal"
-                data-bs-dismiss="modal">Back to first</button>
+
+              <div class="modal-footer d-flex justify-content-between"">
+                <button  style="opacity: 0;" class="btn btn-secondary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">←
+                  Назад</button>
+                <button class="btn btn-primary" data-bs-target="#exampleModalToggle3"
+                data-bs-toggle="modal">Отправить заявку</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Open first modal</a>
 
-      <script>
-        document.addEventListener('DOMContentLoaded', function () { // Аналог $(document).ready(function(){
-          var myModal = new bootstrap.Modal(document.getElementById('exampleModalToggle'), {
-            keyboard: false
-          })
-          myModal.show()
-        });
-      </script>
-      <!-- end qwiz-->
+        <script>
+          document.addEventListener('DOMContentLoaded', function () { // Аналог $(document).ready(function(){
+            var myModal = new bootstrap.Modal(document.getElementById('exampleModalToggle'), {
+              keyboard: false
+            })
+            myModal.show()
+          });
+        </script>
+        <!-- end qwiz-->
 
     </main>
     <footer class="pt-5 my-5 text-muted border-top">
