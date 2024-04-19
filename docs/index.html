@@ -35,6 +35,7 @@
       <style>
         .input-group .input-custom,
         .input-group .input-custom.form-control {
+          background-color: rgba(0, 0, 0, 0.25);
           color: black !important;
           font-size: 25px;
         }
@@ -316,7 +317,7 @@
               </div>
             </div>
             <div class="modal-footer d-flex justify-content-between">
-              <button id="forwardButton1Modal1" class="btn btn-secondary" data-bs-target="#exampleModalToggle"
+              <button id="backwardButton1Modal1" class="btn btn-secondary" data-bs-target="#exampleModalToggle"
                 data-bs-toggle="modal">←
                 Назад</button>
               <button id="forwardButton2Modal1" class="btn btn-primary" data-bs-target="#exampleModalToggle2"
@@ -365,7 +366,7 @@
               </div>
             </div>
             <div class="modal-footer d-flex justify-content-between">
-              <button id="forwardButton1Modal2" class="btn btn-secondary" data-bs-target="#exampleModalToggle2"
+              <button id="backwardButton1Modal2" class="btn btn-secondary" data-bs-target="#exampleModalToggle2"
                 data-bs-toggle="modal">←
                 Назад</button>
               <button id="forwardButton2Modal2" class="btn btn-primary" data-bs-target="#exampleModalToggle3"
@@ -391,7 +392,7 @@
                 <input type="text" id="phoneInput" class="input-custom form-control" placeholder="Ваш номер телефона">
               </div>
               <div class="modal-footer d-flex justify-content-between">
-                <button class="btn btn-secondary" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">← Назад</button>
+                <button id="backwardButton1Modal3" button class="btn btn-secondary" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">← Назад</button>
                 <button id="forwardButton2" class="btn btn-primary">Отправить заявку</button>
               </div>              
             </div>
@@ -499,6 +500,11 @@
             var myModal1 = new bootstrap.Modal(document.getElementById('exampleModalToggle'));
             var myModal2 = new bootstrap.Modal(document.getElementById('exampleModalToggle2'));
             var myModal3 = new bootstrap.Modal(document.getElementById('exampleModalToggle3'));
+
+            backwardButton1Modal1.addEventListener('click', function () {
+                saveSelectedAnswers('modal1');
+                myModal.hide();
+            });
     
             forwardButton1.addEventListener('click', function () {
                 saveSelectedAnswers('modal1');
@@ -510,12 +516,24 @@
                 myModal1.hide();
                 myModal2.show();
             });
+
+            backwardButton1Modal2.addEventListener('click', function () {
+                myModal.hide();
+                myModal1.show();
+                myModal2.hide();
+            });
     
             forwardButton2.addEventListener('click', function () {
                 saveSelectedAnswers('modal2');
                 myModal1.hide();
                 myModal2.hide();
                 myModal3.show();
+            });
+
+            backwardButton1Modal3.addEventListener('click', function () {
+                myModal.hide();
+                myModal1.hide();
+                myModal2.show();
             });
     
             forwardButton3.addEventListener('click', function () {
