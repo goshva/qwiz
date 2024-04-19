@@ -385,10 +385,10 @@
               <h5>Оставьте свои
                 контакты <br> и получите персональную скидку!</h5>
               <div class="mb-3 input-group">
-                <input type="text" class="bg-transparent border-0 border-bottom form-control input-custom py-4 rounded-0" id="exampleFormControlInput2" name="comment" placeholder="Ваше имя и телефон">
+                <input type="text" id="nameInput" class="input-custom form-control" placeholder="Как вас зовут?">
               </div>
               <div class="mb-3 input-group">
-                <input type="text" class="bg-transparent border-0 border-bottom form-control input-custom py-4 rounded-0" id="exampleFormControlInput1" name="email" placeholder="Email">
+                <input type="text" id="phoneInput" class="input-custom form-control" placeholder="+7 (999) 999-99-99">
               </div>
               <div class="modal-footer d-flex justify-content-between">
                 <button class="btn btn-secondary" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">← Назад</button>
@@ -399,127 +399,148 @@
         </div>
       </div>
       <script>
+        var selectedAnswers = {};
+        var userName = "";
+        var userPhone = "";
+    
         document.addEventListener('DOMContentLoaded', function () {
-          var myModal = new bootstrap.Modal(document.getElementById('exampleModalToggle'), {
-            keyboard: false
-          });
-          myModal.show();
+            var myModal = new bootstrap.Modal(document.getElementById('exampleModalToggle'), {
+                keyboard: false
+            });
+            myModal.show();
+    
+            var firstModalContentHeight = document.getElementById('exampleModalToggle').querySelector('.modal-content').clientHeight;
+            var firstModalContentWidth = document.getElementById('exampleModalToggle').querySelector('.modal-content').clientWidth;
+    
+            var allModals = document.querySelectorAll('.modal');
+            allModals.forEach(function (modal) {
+                var modalContent = modal.querySelector('.modal-content');
+                modalContent.style.height = firstModalContentHeight + 'px';
+                modalContent.style.width = firstModalContentWidth + 'px';
+    
+                if (modal.id === 'exampleModalToggle3') {
+                    var thirdModalButton = modal.querySelector('.btn-primary');
+                    var thirdModalFooter = modal.querySelector('.modal-footer');
+                    thirdModalFooter.appendChild(thirdModalButton);
+                }
+            });
+    
+            var forwardButton1 = document.getElementById('forwardButton2Modal1');
+            var forwardButton2 = document.getElementById('forwardButton2Modal2');
+            var forwardButton3 = document.getElementById('forwardButton2');
+    
+            forwardButton1.disabled = true;
+            forwardButton2.disabled = true;
+            forwardButton3.disabled = true;
+    
+            var allRadios1 = document.querySelectorAll('input[name="flexRadioDefault"]');
+            var allRadios2 = document.querySelectorAll('input[name="flexRadioDefault2"]');
+            var allRadios3 = document.querySelectorAll('input[name="flexRadioDefault3"]');
+    
+            allRadios1.forEach(function (radio) {
+                radio.addEventListener('change', function () {
+                    forwardButton1.removeAttribute('disabled');
+                });
+            });
+    
+            allRadios2.forEach(function (radio) {
+                radio.addEventListener('change', function () {
+                    forwardButton2.removeAttribute('disabled');
+                });
+            });
+    
+            allRadios3.forEach(function (radio) {
+                radio.addEventListener('change', function () {
+                    var nameInput = document.getElementById('nameInput').value;
+                    var phoneInput = document.getElementById('phoneInput').value;
+    
+                    if (nameInput.length >= 2 && phoneInput.length === 11) {
+                        forwardButton3.removeAttribute('disabled');
+                    } else {
+                        forwardButton3.setAttribute('disabled', true);
+                    }
+                });
+            });
+    
+            var nameInput = document.getElementById('nameInput');
+            var phoneInput = document.getElementById('phoneInput');
+    
+            nameInput.addEventListener('input', function () {
+                var nameInputValue = nameInput.value.trim();
+                if (nameInputValue.length >= 2 && phoneInput.value.length === 11) {
+                    forwardButton3.removeAttribute('disabled');
+                } else {
+                    forwardButton3.setAttribute('disabled', true);
+                }
+            });
+    
+            phoneInput.addEventListener('input', function () {
+                var phoneInputValue = phoneInput.value.trim();
+                if (nameInput.value.length >= 2 && phoneInputValue.length === 11) {
+                    forwardButton3.removeAttribute('disabled');
+                } else {
+                    forwardButton3.setAttribute('disabled', true);
+                }
+            });
+    
+            var textElements = document.querySelectorAll('.answer-container');
+            textElements.forEach(function (element) {
+                element.addEventListener('click', function () {
+                    var radio = element.querySelector('input[type="radio"]');
+                    if (radio) {
+                        radio.checked = true;
+                        radio.dispatchEvent(new Event('change'));
+                    }
+                });
+            });
+    
+            var myModal1 = new bootstrap.Modal(document.getElementById('exampleModalToggle'));
+            var myModal2 = new bootstrap.Modal(document.getElementById('exampleModalToggle2'));
+            var myModal3 = new bootstrap.Modal(document.getElementById('exampleModalToggle3'));
+    
+forwardButton1.addEventListener('click', function () {
+    saveSelectedAnswers('modal1');
+    var checkedRadio = document.getElementById('exampleModalToggle').querySelector('input[name="flexRadioDefault"]:checked');
+    if (!checkedRadio) {
+        return;
+    }
+    myModal.hide();
+    myModal1.hide();
+    myModal2.show();
+});
 
-          var firstModalContentHeight = document.getElementById('exampleModalToggle').querySelector('.modal-content').clientHeight;
-          var firstModalContentWidth = document.getElementById('exampleModalToggle').querySelector('.modal-content').clientWidth;
+forwardButton2.addEventListener('click', function () {
+    saveSelectedAnswers('modal2');
+    myModal1.hide();
+    myModal2.hide();
+    myModal3.show();
+});
 
-          var allModals = document.querySelectorAll('.modal');
-          allModals.forEach(function (modal) {
-            var modalContent = modal.querySelector('.modal-content');
-            modalContent.style.height = firstModalContentHeight + 'px';
-            modalContent.style.width = firstModalContentWidth + 'px';
-
-            if (modal.id === 'exampleModalToggle3') {
-              var thirdModalButton = modal.querySelector('.btn-primary');
-              var thirdModalFooter = modal.querySelector('.modal-footer');
-              thirdModalFooter.appendChild(thirdModalButton);
-            }
-          });
-
-          var forwardButton1 = document.getElementById('forwardButton2Modal1');
-          var forwardButton2 = document.getElementById('forwardButton2Modal2');
-          var forwardButton3 = document.getElementById('forwardButton2');
-
-          forwardButton1.disabled = true;
-          forwardButton2.disabled = true;
-          forwardButton3.disabled = true;
-
-          forwardButton1.addEventListener('click', function () {
-            var checkedRadio = document.querySelector('input[name="flexRadioDefault"]:checked');
-            if (!checkedRadio) {
-              return;
-            }
-          });
-
-          forwardButton2.addEventListener('click', function () {
-            var checkedRadio = document.querySelector('input[name="flexRadioDefault2"]:checked');
-            if (!checkedRadio) {
-              return;
-            }
-          });
-
-          var submitButton = document.getElementById('forwardButton2');
-
-          submitButton.addEventListener('click', function(event) {
-            event.preventDefault();
-
-          var openModals = document.querySelectorAll('.modal.show');
-          openModals.forEach(function(modal) {
-            var modalInstance = bootstrap.Modal.getInstance(modal);
-            if (modalInstance) {
-              modalInstance.hide();
-            }
-          });
+forwardButton3.addEventListener('click', function () {
+    saveSelectedAnswers('modal3');
+    var nameInputValue = nameInput.value.trim();
+    var phoneInputValue = phoneInput.value.trim();
+    userName = nameInputValue;
+    userPhone = phoneInputValue;
+    console.log("Имя пользователя:", userName);
+    console.log("Телефон пользователя:", userPhone);
+    console.log("Выбранные ответы:", selectedAnswers);
+});
         });
-
-          var allRadios1 = document.querySelectorAll('input[name="flexRadioDefault"]');
-          var allRadios2 = document.querySelectorAll('input[name="flexRadioDefault2"]');
-          var allRadios3 = document.querySelectorAll('input[name="flexRadioDefault3"]');
-
-          allRadios1.forEach(function (radio) {
-            radio.addEventListener('change', function () {
-              forwardButton1.removeAttribute('disabled');
+    
+        function saveSelectedAnswers(modalName) {
+            var radios = document.querySelectorAll('input[name="flexRadioDefault"]:checked');
+            var answers = [];
+            radios.forEach(function (radio) {
+                var answerText = radio.parentElement.querySelector('.answer-label').textContent.trim();
+                console.log(answerText);
+                answers.push(answerText);
             });
-          });
-
-          allRadios2.forEach(function (radio) {
-            radio.addEventListener('change', function () {
-              forwardButton2.removeAttribute('disabled');
-            });
-          });
-
-          allRadios3.forEach(function (radio) {
-            radio.addEventListener('change', function () {
-              var nameInput = document.getElementById('nameInput').value;
-              var phoneInput = document.getElementById('phoneInput').value;
-
-              if (nameInput.length >= 2 && phoneInput.length === 11) {
-                forwardButton3.removeAttribute('disabled');
-              } else {
-                forwardButton3.setAttribute('disabled', true);
-              }
-            });
-          });
-
-          var nameInput = document.getElementById('nameInput');
-          var phoneInput = document.getElementById('phoneInput');
-
-          nameInput.addEventListener('input', function () {
-            var nameInputValue = nameInput.value.trim();
-            if (nameInputValue.length >= 2 && phoneInput.value.length === 11) {
-              forwardButton3.removeAttribute('disabled');
-            } else {
-              forwardButton3.setAttribute('disabled', true);
-            }
-          });
-
-          phoneInput.addEventListener('input', function () {
-            var phoneInputValue = phoneInput.value.trim();
-            if (nameInput.value.length >= 2 && phoneInputValue.length === 12) {
-              forwardButton3.removeAttribute('disabled');
-            } else {
-              forwardButton3.setAttribute('disabled', true);
-            }
-          });
-
-          var textElements = document.querySelectorAll('.answer-container');
-          textElements.forEach(function (element) {
-            element.addEventListener('click', function () {
-              var radio = element.querySelector('input[type="radio"]');
-              if (radio) {
-                radio.checked = true;
-                radio.dispatchEvent(new Event('change'));
-              }
-            });
-          });
-        });
-      </script>
-
+            selectedAnswers[modalName] = answers;
+        }
+    </script>
+           
+    
       <!-- end qwiz-->
 
     </main>
