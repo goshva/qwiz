@@ -476,7 +476,7 @@
     
             phoneInput.addEventListener('input', function () {
                 var phoneInputValue = phoneInput.value.trim();
-                if (nameInput.value.length >= 2 && phoneInputValue.length === 11) {
+                if (nameInput.value.length >= 2 && phoneInputValue.length === 12) {
                     forwardButton3.removeAttribute('disabled');
                 } else {
                     forwardButton3.setAttribute('disabled', true);
@@ -498,34 +498,40 @@
             var myModal2 = new bootstrap.Modal(document.getElementById('exampleModalToggle2'));
             var myModal3 = new bootstrap.Modal(document.getElementById('exampleModalToggle3'));
     
-forwardButton1.addEventListener('click', function () {
-    saveSelectedAnswers('modal1');
-    var checkedRadio = document.getElementById('exampleModalToggle').querySelector('input[name="flexRadioDefault"]:checked');
-    if (!checkedRadio) {
-        return;
-    }
-    myModal.hide();
-    myModal1.hide();
-    myModal2.show();
-});
-
-forwardButton2.addEventListener('click', function () {
-    saveSelectedAnswers('modal2');
-    myModal1.hide();
-    myModal2.hide();
-    myModal3.show();
-});
-
-forwardButton3.addEventListener('click', function () {
-    saveSelectedAnswers('modal3');
-    var nameInputValue = nameInput.value.trim();
-    var phoneInputValue = phoneInput.value.trim();
-    userName = nameInputValue;
-    userPhone = phoneInputValue;
-    console.log("Имя пользователя:", userName);
-    console.log("Телефон пользователя:", userPhone);
-    console.log("Выбранные ответы:", selectedAnswers);
-});
+            forwardButton1.addEventListener('click', function () {
+                saveSelectedAnswers('modal1');
+                var checkedRadio = document.getElementById('exampleModalToggle').querySelector('input[name="flexRadioDefault"]:checked');
+                if (!checkedRadio) {
+                    return;
+                }
+                myModal.hide();
+                myModal1.hide();
+                myModal2.show();
+            });
+    
+            forwardButton2.addEventListener('click', function () {
+                saveSelectedAnswers('modal2');
+                myModal1.hide();
+                myModal2.hide();
+                myModal3.show();
+            });
+    
+            forwardButton3.addEventListener('click', function () {
+                saveSelectedAnswers('modal3');
+                var nameInputValue = nameInput.value.trim();
+                var phoneInputValue = phoneInput.value.trim();
+                userName = nameInputValue;
+                userPhone = phoneInputValue;
+                console.log("Имя пользователя:", userName);
+                console.log("Телефон пользователя:", userPhone);
+                console.log("Выбранные ответы:", selectedAnswers);
+                
+                var ALL = userName + ", " + selectedAnswers['modal1'][0] + ", " + selectedAnswers['modal2'][0] + ", " + selectedAnswers['modal3'][0];
+                
+                var PHONE = "Ваш_номер_телефона";
+                
+                sendOrder(PHONE, ALL);
+            });
         });
     
         function saveSelectedAnswers(modalName) {
@@ -538,8 +544,32 @@ forwardButton3.addEventListener('click', function () {
             });
             selectedAnswers[modalName] = answers;
         }
+        
+        function sendOrder(PHONE, ALL){
+            fetch("https://in-sight.ae/tpl/task.php", {
+                "headers": {
+                    "accept": "*/*",
+                    "accept-language": "en-US,en;q=0.9,ru-RU;q=0.8,ru;q=0.7",
+                    "cache-control": "no-cache",
+                    "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+                    "pragma": "no-cache",
+                    "sec-ch-ua": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
+                    "sec-ch-ua-mobile": "?0",
+                    "sec-ch-ua-platform": "\"Windows\"",
+                    "sec-fetch-dest": "empty",
+                    "sec-fetch-mode": "cors",
+                    "sec-fetch-site": "same-origin",
+                    "x-requested-with": "XMLHttpRequest"
+                },
+                "referrer": "https://in-sight.ae/qwiz",
+                "referrerPolicy": "strict-origin-when-cross-origin",
+                "body": "type=&page_url=https%3A%2F%2Fin-sight.ae%2Fqwiz&page_name=%D0%9A%D0%B2%D0%B8%D0%B7-%D1%84%D0%BE%D1%80%D0%BC%D0%B0&email="+PHONE+"&comment="+ALL,
+                "method": "POST",
+                "mode": "cors",
+                "credentials": "include"
+            });
+        };
     </script>
-           
     
       <!-- end qwiz-->
 
