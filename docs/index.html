@@ -429,7 +429,7 @@
     
             var forwardButton1 = document.getElementById('forwardButton2Modal1');
             var forwardButton2 = document.getElementById('forwardButton2Modal2');
-            forwardButton3 = document.getElementById('forwardButton2'); // Объявляем здесь
+            forwardButton3 = document.getElementById('forwardButton2');
     
             forwardButton1.disabled = true;
             forwardButton2.disabled = true;
@@ -478,7 +478,7 @@
     
             phoneInput.addEventListener('input', function () {
                 var phoneInputValue = phoneInput.value.trim();
-                if (nameInput.value.length >= 2 && phoneInputValue.length > 11) {
+                if (nameInput.value.length >= 2 && phoneInputValue.length >= 11) {
                     forwardButton3.removeAttribute('disabled');
                 } else {
                     forwardButton3.setAttribute('disabled', true);
