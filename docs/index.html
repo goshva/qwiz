@@ -478,7 +478,7 @@
     
             phoneInput.addEventListener('input', function () {
                 var phoneInputValue = phoneInput.value.trim();
-                if (nameInput.value.length >= 2 && phoneInputValue.length === 12) {
+                if (nameInput.value.length >= 2 && phoneInputValue.length > 11) {
                     forwardButton3.removeAttribute('disabled');
                 } else {
                     forwardButton3.setAttribute('disabled', true);
